@@ -73,6 +73,7 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 		}
 	} else {
 		manifest.minimum_chrome_version = '105';
+		manifest.key = process.env.CHROME_KEY;
 		manifest.incognito = 'split';
 	}
 

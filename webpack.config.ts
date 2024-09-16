@@ -9,11 +9,13 @@ import 'webpack-dev-server'; // для исправления типов
 import WebpackExtensionManifestPlugin from 'webpack-extension-manifest-plugin';
 import UTF8BOMPlugin from 'webpack-utf8-bom';
 import yargsParser from 'yargs-parser';
+import * as dotenv from 'dotenv';
 
 import getManifest from './manifest.config.ts';
 import ZipPlugin from './plugins/ZipPlugin.ts';
 
 const argv = yargsParser(process.argv.slice(2));
+dotenv.config();
 
 const files = ['.svg', '.ttf', '.ts', '.tsx', '.css', '.scss', '.json'];
 const DEFAULT_PUBLIC_PATH = '/';
