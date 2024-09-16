@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@types/chrome": "^0.0.270",
 		"@types/node": "^22.4.0",
-		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"archiver": "^7.0.1",
 		"clear-folder": "^5.0.0",
