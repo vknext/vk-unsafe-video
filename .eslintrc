@@ -1,0 +1,27 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"globals": {
+		"process": true
+	},
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+		"no-async-promise-executor": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/ban-ts-comment": "off",
+		"prefer-const": 1,
+		"@typescript-eslint/no-unused-vars": "warn",
+		"@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+		"no-mixed-spaces-and-tabs": "off"
+	},
+	"settings": {}
+}

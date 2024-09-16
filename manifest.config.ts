@@ -1,0 +1,82 @@
+import packageJson from './package.json';
+const { version } = packageJson;
+
+interface GetManifestOptions {
+	isFirefox: boolean;
+	isDev: boolean;
+}
+
+const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
+	const manifest: Record<string, any> = {
+		manifest_version: 3,
+		name: '__MSG_extName__',
+		version,
+		short_name: 'vknext-vuv',
+		description: '__MSG_extDescription__',
+		homepage_url: 'https://vknext.net',
+		default_locale: 'ru',
+		content_scripts: [
+			{
+				js: ['content.vuv.js'],
+				css: ['injected.vuv.css'],
+				matches: ['https://vk.com/*', 'https://vk.ru/*'],
+				run_at: 'document_idle',
+			},
+		],
+		icons: {
+			'16': 'assets/icon16.png',
+			'24': 'assets/icon24.png',
+			'32': 'assets/icon32.png',
+			'48': 'assets/icon48.png',
+			'128': 'assets/icon128.png',
+			'300': 'assets/icon300.png',
+		},
+		web_accessible_resources: [
+			{
+				resources: ['*'],
+				matches: ['https://vk.com/*', 'https://vk.ru/*'],
+			},
+		],
+		permissions: [],
+		host_permissions: ['https://vk.com/*', 'https://vk.ru/*'],
+	};
+
+	if (isDev) {
+		manifest.web_accessible_resources[0].resources.push('*.map');
+	}
+
+	if (isFirefox) {
+		manifest.manifest_version = 2;
+
+		manifest.browser_specific_settings = {
+			gecko: {
+				id: process.env.FIREFOX_ID,
+				strict_min_version: '113.0',
+			},
+		};
+
+		if (manifest.web_accessible_resources) {
+			const resources = manifest.web_accessible_resources.map((e: any) => {
+				if (typeof e === 'string') {
+					return e;
+				}
+
+				return e.resources;
+			});
+
+			manifest.web_accessible_resources = resources.flat();
+		}
+
+		if (manifest.host_permissions) {
+			manifest.permissions = Array.from(new Set([...(manifest.permissions || []), ...manifest.host_permissions]));
+			delete manifest.host_permissions;
+		}
+	} else {
+		manifest.minimum_chrome_version = '105';
+		manifest.incognito = 'split';
+	}
+
+	return manifest;
+};
+
+export default getManifest;

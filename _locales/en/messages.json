@@ -1,0 +1,8 @@
+{
+	"extName": {
+		"message": "VK Unsafe Video — disable \"Safe search\" in VK Video"
+	},
+	"extDescription": {
+		"message": "Returns the checkbox \"Safe search\" in the VK Video section. Created by VK Next team."
+	}
+}
