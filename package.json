@@ -1,6 +1,6 @@
 {
 	"name": "vk-unsafe-video",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"type": "module",
 	"scripts": {
 		"dev": "cross-env NODE_OPTIONS=\"--import=tsx/esm\" webpack serve --config webpack.config.ts --env --dev",
