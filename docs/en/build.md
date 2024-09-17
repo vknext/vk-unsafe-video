@@ -8,17 +8,9 @@
 ### Build steps
 
 1. Clone the repository
-2. (Optional) Create a `.env` file in the root of the repository with the following content:
-
-```
-CHROME_KEY=%extension_chrome_key%
-FIREFOX_ID=%firefox_extension_id%
-```
-
+2. _(Optional)_ Change extension key/id in `.env` file if you want to publish your own copy of the extension to the stores
 3. Run `yarn install --frozen-lockfile` from the root of the repository
 4. Run `yarn build:ext` from the root of the repository
-
-2nd step can be skipped if you don't need to publish the extension to the stores.
 
 Build artifacts are located in the `./build` folder.
 
