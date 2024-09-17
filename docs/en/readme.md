@@ -12,11 +12,9 @@
 	<a href="https://github.com/vknext/vk-unsafe-video/releases/latest"><img src="https://img.shields.io/github/v/release/vknext/vk-unsafe-video?logo=github" alt="GitHub Release Version"></a>
 </p>
 <p align="center">
-Расширение для возвращения опции "Без ограничений" в VK Видео. Создано командой VK Next.
+Browser extension for bringing back "Safe search" checkbox in the VK Video section. Created by VK Next team.
 </p>
 
-[English Readme](https://github.com/vknext/vk-unsafe-video/docs/en/readme.md)
+### Build & Development instructions
 
-### Сборка и разработка расширения
-
-[Инструкция по сборке релизной и дебаг версий расположена здесь](https://github.com/vknext/vk-unsafe-video/docs/ru/build.md)
+[Build instructions can be found here](https://github.com/vknext/vk-unsafe-video/docs/en/build.md)

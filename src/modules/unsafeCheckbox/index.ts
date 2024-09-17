@@ -25,13 +25,30 @@ const enableUnsafeCheckbox = (filterPane: FilterPaneElement) => {
 
 	window.vk.pe['search_video_adult_web'] = true;
 
-	const vknextPromoLink = document.createElement('a');
-	vknextPromoLink.href = 'https://vknext.net/?utm_source=vuv';
-	vknextPromoLink.textContent = 'Больше возможностей доступно в расширении VK Next. Нажмите, чтобы ознакомиться.';
-	vknextPromoLink.target = '_blank';
-	vknextPromoLink.classList.add('VkNextPromoLink');
+	if (!window.vknext.webpack) {
+		const vknextPromoLink = document.createElement('a');
 
-	unsafeCheckbox.parentElement!.append(vknextPromoLink);
+		vknextPromoLink.href = 'https://vknext.net/?utm_source=vuv';
+		vknextPromoLink.textContent = 'Больше возможностей доступно в расширении VK Next. Нажмите, чтобы ознакомиться.';
+		vknextPromoLink.target = '_blank';
+		vknextPromoLink.classList.add('VkNextPromoLink');
+
+		unsafeCheckbox.parentElement!.append(vknextPromoLink);
+	}
+
+	const loc = window.Video.getLoc();
+	if (loc.q) {
+		window.Video._prepareSearchFilters(loc);
+		window.cur.searchText = loc.q;
+		window.Video.inputVal(cur.searchInputEl, cur.searchText);
+		window.Video.doSearch(loc.q);
+	}
+
+	if (window.Video.getLoc().notsafe) {
+		// Смешной костыль, чтобы затриггерить ре-рендер компонента поиска при перезагрузке страницы
+		unsafeCheckbox.click();
+		unsafeCheckbox.click();
+	}
 };
 
 const initUnsafeCheckbox = () => {

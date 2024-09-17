@@ -2,6 +2,7 @@
 
 interface VKNext {
 	vuv_installed?: boolean;
+	webpack?: Record<string, any>;
 }
 
 export interface Nav {
@@ -11,6 +12,8 @@ export interface Nav {
 export interface Cur {
 	lang: Record<string, any>;
 	videoFilter_notsafe?: HTMLElement;
+	searchText?: string;
+	searchInputEl?: HTMLElement;
 }
 
 export interface Vk {
