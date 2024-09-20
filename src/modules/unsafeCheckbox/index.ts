@@ -23,8 +23,6 @@ const enableUnsafeCheckbox = (filterPane: FilterPaneElement) => {
 	window.addEvent(window.cur.videoFilter_notsafe, 'click', window.Video._onFiltersChanged);
 	window.data(window.cur.videoFilter_notsafe, 'title', localeString);
 
-	window.vk.pe['search_video_adult_web'] = true;
-
 	if (!window.vknext.webpack) {
 		const vknextPromoLink = document.createElement('a');
 

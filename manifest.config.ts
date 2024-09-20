@@ -20,7 +20,7 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 				js: ['content.vuv.js'],
 				css: ['injected.vuv.css'],
 				matches: ['https://vk.com/*', 'https://vk.ru/*'],
-				run_at: 'document_idle',
+				run_at: 'document_start',
 			},
 		],
 		icons: {
