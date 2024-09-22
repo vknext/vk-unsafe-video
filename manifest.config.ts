@@ -6,13 +6,18 @@ interface GetManifestOptions {
 	isDev: boolean;
 }
 
+const browser_action = {
+	default_title: '__MSG_popup_title__',
+	default_popup: 'popup.html',
+};
+
 const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 	const manifest: Record<string, any> = {
 		manifest_version: 3,
-		name: '__MSG_extName__',
+		name: '__MSG_ext_name__',
 		version,
 		short_name: 'vknext-vuv',
-		description: '__MSG_extDescription__',
+		description: '__MSG_ext_description__',
 		homepage_url: 'https://vknext.net',
 		default_locale: 'ru',
 		content_scripts: [
@@ -55,6 +60,8 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 			},
 		};
 
+		manifest.browser_action = browser_action;
+
 		if (manifest.web_accessible_resources) {
 			const resources = manifest.web_accessible_resources.map((e: any) => {
 				if (typeof e === 'string') {
@@ -75,6 +82,7 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 		manifest.minimum_chrome_version = '105';
 		manifest.key = process.env.CHROME_KEY;
 		manifest.incognito = 'split';
+		manifest.action = browser_action;
 	}
 
 	return manifest;
