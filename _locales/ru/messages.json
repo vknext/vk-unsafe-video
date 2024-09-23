@@ -1,8 +1,17 @@
 {
-	"extName": {
+	"ext_name": {
 		"message": "VK Unsafe Video — отключить \"Безопасный поиск\" в VK Видео"
 	},
-	"extDescription": {
+	"ext_description": {
 		"message": "Возвращает галочку \"Безопасный поиск\" в разделе VK Видео. Создано командой VK Next."
+	},
+	"popup_title": {
+		"message": "VK Unsafe Video"
+	},
+	"popup_donate": {
+		"message": "Поддержать проект"
+	},
+	"popup_feedback": {
+		"message": "Сообщить об ошибке"
 	}
 }
