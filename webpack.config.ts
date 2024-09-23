@@ -43,13 +43,23 @@ const getEntry = () => {
 	const entryConfig: Entry = {};
 
 	const defaultEntries: Entry = {
-		content: {
-			import: path.resolve('./', 'src', 'content.ts'),
+		vkcom_content: {
+			import: path.resolve('./', 'src', 'vkcom', 'content.ts'),
 			chunkLoading: false,
 			runtime: false,
 		},
-		injected: {
-			import: path.resolve('./', 'src', 'injected.ts'),
+		vkcom_injected: {
+			import: path.resolve('./', 'src', 'vkcom', 'injected.ts'),
+			publicPath: './',
+			runtime: false,
+		},
+		mvk_content: {
+			import: path.resolve('./', 'src', 'mvk', 'content.ts'),
+			chunkLoading: false,
+			runtime: false,
+		},
+		mvk_injected: {
+			import: path.resolve('./', 'src', 'mvk', 'injected.ts'),
 			publicPath: './',
 			runtime: false,
 		},
@@ -148,7 +158,7 @@ const options: Configuration = {
 	optimization: {
 		runtimeChunk: 'single',
 		splitChunks: {
-			chunks: (chunk) => !(chunk.name || '').endsWith('content'),
+			chunks: (chunk) => !(chunk.name || '').endsWith('_content'),
 			automaticNameDelimiter: '.',
 			minSize: 40_000,
 		},

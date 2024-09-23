@@ -22,9 +22,14 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 		default_locale: 'ru',
 		content_scripts: [
 			{
-				js: ['content.vuv.js'],
-				css: ['injected.vuv.css'],
+				js: ['vkcom_content.vuv.js'],
+				css: ['vkcom_injected.vuv.css'],
 				matches: ['https://vk.com/*', 'https://vk.ru/*'],
+				run_at: 'document_start',
+			},
+			{
+				js: ['mvk_content.vuv.js'],
+				matches: ['https://m.vk.com/*', 'https://m.vk.ru/*'],
 				run_at: 'document_start',
 			},
 		],
@@ -39,11 +44,11 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 		web_accessible_resources: [
 			{
 				resources: ['*'],
-				matches: ['https://vk.com/*', 'https://vk.ru/*'],
+				matches: ['https://vk.com/*', 'https://vk.ru/*', 'https://m.vk.com/*', 'https://m.vk.ru/*'],
 			},
 		],
 		permissions: [],
-		host_permissions: ['https://vk.com/*', 'https://vk.ru/*'],
+		host_permissions: ['https://vk.com/*', 'https://vk.ru/*', 'https://m.vk.com/*', 'https://m.vk.ru/*'],
 	};
 
 	if (isDev) {
