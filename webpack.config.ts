@@ -64,6 +64,11 @@ const getEntry = () => {
 			runtime: false,
 		},
 		popup: path.resolve('./', 'src', 'popup', 'index.ts'),
+		background: {
+			import: path.resolve('./', 'src', 'background', 'index.ts'),
+			runtime: false,
+			chunkLoading: false,
+		},
 	};
 
 	if (!IS_DEV) {
