@@ -58,6 +58,10 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 	if (isFirefox) {
 		manifest.manifest_version = 2;
 
+		manifest.background = {
+			scripts: ['background.vuv.js'],
+		};
+
 		manifest.browser_specific_settings = {
 			gecko: {
 				id: process.env.FIREFOX_ID,
@@ -88,6 +92,10 @@ const getManifest = ({ isFirefox, isDev }: GetManifestOptions) => {
 		manifest.key = process.env.CHROME_KEY;
 		manifest.incognito = 'split';
 		manifest.action = browser_action;
+
+		manifest.background = {
+			service_worker: 'background.vuv.js',
+		};
 	}
 
 	return manifest;

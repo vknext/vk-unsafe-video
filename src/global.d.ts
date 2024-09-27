@@ -21,6 +21,8 @@ export interface VK {
 }
 
 declare global {
+	var browser: typeof globalThis.chrome;
+
 	var vknext: VKNext;
 	var nav: Nav;
 	var cur: Cur;
