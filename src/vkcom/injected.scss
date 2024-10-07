@@ -5,10 +5,6 @@
 }
 
 // убираем блюр с превью видео с возрастным ограничением
-.VideoRestriction__boxWrap {
-	display: none !important;
-}
-
 .VideoRestriction--blur .VideoRestriction__thumb {
 	filter: none !important;
 	transform: translateZ(0) !important;
