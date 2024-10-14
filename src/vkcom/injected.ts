@@ -1,7 +1,7 @@
-import initUnsafeCheckbox from './modules/unsafeCheckbox';
+import initUnsafeCheckbox from '../modules/unsafeCheckbox';
 import './injected.scss';
-import setUnsafeVideoToggle from './modules/unsafeVideoToggle';
-import initVKNextSearchBanner from './modules/VKNextSearchBanner';
+import setUnsafeVideoToggle from '../modules/unsafeVideoToggle';
+import initVKNextSearchBanner from '../modules/VKNextSearchBanner';
 
 (window.vknext = window.vknext || {}).vuv_installed = true;
 

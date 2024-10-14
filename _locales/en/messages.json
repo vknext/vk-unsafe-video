@@ -1,8 +1,17 @@
 {
-	"extName": {
+	"ext_name": {
 		"message": "VK Unsafe Video — disable \"Safe search\" in VK Video"
 	},
-	"extDescription": {
+	"ext_description": {
 		"message": "Returns the checkbox \"Safe search\" in the VK Video section. Created by VK Next team."
+	},
+	"popup_title": {
+		"message": "VK Unsafe Video"
+	},
+	"popup_donate": {
+		"message": "Support the project"
+	},
+	"popup_feedback": {
+		"message": "Report an issue"
 	}
 }

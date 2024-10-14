@@ -1,0 +1,11 @@
+.VkNextPromoLink {
+	margin-top: 10px;
+	display: block;
+	cursor: pointer;
+}
+
+// убираем блюр с превью видео с возрастным ограничением
+.VideoRestriction--blur .VideoRestriction__thumb {
+	filter: none !important;
+	transform: translateZ(0) !important;
+}

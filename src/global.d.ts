@@ -16,11 +16,13 @@ export interface Cur {
 	searchInputEl?: HTMLElement;
 }
 
-export interface Vk {
+export interface VK {
 	pe: Record<string, any>;
 }
 
 declare global {
+	var browser: typeof globalThis.chrome;
+
 	var vknext: VKNext;
 	var nav: Nav;
 	var cur: Cur;
@@ -29,7 +31,7 @@ declare global {
 	var addEvent: (elem: HTMLElement, event: string, handler: EventListenerOrEventListenerObject) => void;
 	var removeEvent: (elem: HTMLElement, event: string) => void;
 	var Video: Record<string, any>;
-	var vk: Vk;
+	var vk: VK;
 
 	namespace NodeJS {
 		interface ProcessEnv {
