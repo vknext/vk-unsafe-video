@@ -1,4 +1,18 @@
 <h1 align="center">
+  Расширение больше не поддерживается.
+  <br>
+  Extension no longer maintained.
+</h1>
+<p>
+  ВКонтакте ограничили поиск по видео без ограничений на стороне сервера и это никак нельзя не исправить на уровне расширения. RIP
+</p>
+<p>
+  VK has restricted the search for unsafe videos on the server side and this cannot be fixed at the extension level. RIP
+</p>
+
+#
+
+<h1 align="center">
   <a href="https://vknext.net">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://static.vknext.net/github/vuv-logo-dark.svg">
